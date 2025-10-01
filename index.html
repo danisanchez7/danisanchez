@@ -3,121 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Nombre | Curriculum Vitae</title>
+    <title>Mi CV | Tu Nombre</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
+        :root {
+            /* Colores inspirados en Material for MkDocs */
+            --md-primary-color: #007bff; /* Azul primario para enlaces/botones */
+            --md-sidebar-color: #263238; /* Gris azulado oscuro para la barra lateral */
+            --md-text-color: #212529;
+            --md-background-color: #f8f9fa;
+        }
+
         body {
-            background-color: #f8f9fa; /* Fondo gris muy claro */
+            background-color: var(--md-background-color);
+            padding-top: 56px; /* Espacio para la barra de navegación superior */
         }
+
+        /* Estilo de la barra lateral de navegación */
         .sidebar {
-            background-color: #343a40; /* Fondo oscuro para la barra lateral */
-            color: white;
-            padding: 30px 20px;
-            min-height: 100vh; /* Asegura que la barra lateral ocupe toda la altura */
+            position: fixed; /* Hace que se mantenga en su sitio al hacer scroll */
+            top: 56px;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 15px;
+            width: 280px; /* Ancho fijo similar al ejemplo */
+            background-color: var(--md-sidebar-color);
+            overflow-y: auto; /* Permite hacer scroll solo en la barra lateral */
         }
+
+        /* Estilo para el contenido principal */
         .main-content {
-            padding: 40px;
+            margin-left: 280px; /* Desplaza el contenido para dejar espacio a la barra lateral */
+            padding: 30px;
         }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid #ffffff;
+
+        /* Estilo de los enlaces en la barra lateral */
+        .nav-link {
+            color: #ccc;
+            padding: 8px 15px;
+            border-radius: 4px;
         }
-        h1, h2, h3 {
-            color: #007bff; /* Color azul para títulos */
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 5px;
-            margin-top: 20px;
-            margin-bottom: 15px;
+        .nav-link:hover, .nav-link.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
         }
-        .section-title {
-            color: #343a40;
+
+        /* Estilos del CV en el área de contenido */
+        h1, h2 {
+            color: var(--md-text-color);
             font-weight: 700;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 25px;
+        }
+        .text-section {
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        /* Responsividad: Ocultar sidebar en móviles */
+        @media (max-width: 767.98px) {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-md-3 sidebar">
-                <div class="text-center">
-                    <img src="tu_foto_perfil.jpg" alt="Foto de Perfil" class="profile-img">
-                    <h2 class="text-white">Tu Nombre Completo</h2>
-                    <p class="lead">Tu Título Profesional (Ej: Desarrollador Frontend)</p>
-                </div>
-
-                <hr>
-
-                <h3 class="text-secondary mt-4">Contacto</h3>
-                <ul class="list-unstyled">
-                    <li><i class="fa-solid fa-envelope"></i> Email: **tu.email@ejemplo.com**</li>
-                    <li><i class="fa-solid fa-phone"></i> Teléfono: +XX XXX XXX XX</li>
-                    <li><i class="fa-brands fa-linkedin"></i> LinkedIn: **/in/tu-perfil**</li>
-                    <li><i class="fa-brands fa-github"></i> GitHub: **/tu-usuario**</li>
-                    <li class="mt-3"><i class="fa-solid fa-location-dot"></i> Ciudad, País</li>
-                </ul>
-
-                <hr>
-
-                <h3 class="text-secondary mt-4">Habilidades</h3>
-                <span class="badge bg-primary m-1">Python</span>
-                <span class="badge bg-primary m-1">SQL</span>
-                <span class="badge bg-primary m-1">Análisis Financiero</span>
-                <span class="badge bg-primary m-1">Bootstrap</span>
-                <span class="badge bg-primary m-1">HTML/CSS</span>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--md-sidebar-color);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CV: Tu Nombre y Apellido</a>
             </div>
+    </nav>
 
-            <div class="col-md-9 main-content">
+    <div class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#inicio">🏠 Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#perfil">👤 Perfil Profesional</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#experiencia">💼 Experiencia Laboral</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#habilidades">⚙️ Habilidades y Tech Stack</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#educacion">🎓 Educación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contacto">📧 Contacto</a>
+            </li>
+        </ul>
+    </div>
 
-                <section id="perfil">
-                    <h2 class="section-title">Perfil Profesional</h2>
-                    <p>
-                        Escribe aquí un resumen conciso y potente de tu experiencia.
-                        **Ejemplo:** Profesional de las finanzas con 5 años de experiencia en análisis de datos y modelado financiero. Experto en el uso de Python y herramientas de visualización para optimizar la toma de decisiones estratégicas. Busco aplicar mis conocimientos en un entorno dinámico y desafiante.
-                    </p>
-                </section>
-
-                <section id="experiencia">
-                    <h2 class="section-title">Experiencia Laboral</h2>
-
-                    <h4 class="mt-4">Analista Financiero Senior</h4>
-                    <p class="text-muted">Empresa Ejemplo S.A. | Enero 2020 – Presente</p>
-                    <ul>
-                        <li>Desarrollo de modelos predictivos usando Python para la proyección de ingresos (logrando una precisión del 90%).</li>
-                        <li>Liderazgo en la automatización de reportes mensuales, reduciendo el tiempo de procesamiento en un 40%.</li>
-                        <li>Presentación de informes a la gerencia sobre el rendimiento financiero y tendencias del mercado.</li>
-                    </ul>
-
-                    <h4 class="mt-4">Asistente Contable</h4>
-                    <p class="text-muted">Firma de Consultoría | Julio 2018 – Diciembre 2019</p>
-                    <ul>
-                        <li>Registro y conciliación de cuentas.</li>
-                        <li>Apoyo en la preparación de declaraciones de impuestos.</li>
-                    </ul>
-                </section>
-
-                <section id="educacion">
-                    <h2 class="section-title">Educación</h2>
-                    
-                    <h4 class="mt-4">Máster en Finanzas</h4>
-                    <p class="text-muted mb-1">Universidad Nacional de Finanzas</p>
-                    <p class="text-muted">2016 – 2018</p>
-
-                    <h4 class="mt-4">Licenciatura en Contaduría Pública</h4>
-                    <p class="text-muted mb-1">Universidad Local</p>
-                    <p class="text-muted">2012 – 2016</p>
-                </section>
-
-            </div>
+    <div class="main-content">
+        
+        <a id="inicio"></a>
+        <div class="text-section">
+            <h1>Bienvenido a mi CV en Línea</h1>
+            <p class="lead">Hola, soy **[Tu Nombre]**, un [Tu Título] apasionado por [Tu Área de Interés].</p>
+            <p>Utiliza la barra de navegación de la izquierda para explorar mi experiencia, educación y habilidades de manera estructurada.</p>
         </div>
+
+        <a id="perfil"></a>
+        <div class="text-section">
+            <h2>Perfil Profesional</h2>
+            <p>
+                Escribe un resumen conciso y estratégico sobre quién eres y qué valor aportas.
+                <br><br>
+                **Ejemplo:** Profesional con 7 años de experiencia en el desarrollo de soluciones de análisis financiero y automatización de procesos. Experto en Python para data science y en la creación de dashboards interactivos con Power BI. Busco un rol que me permita liderar proyectos de transformación digital y optimización de recursos.
+            </p>
+        </div>
+
+        <a id="experiencia"></a>
+        <div class="text-section">
+            <h2>Experiencia Laboral</h2>
+
+            <h3>Analista Senior de Datos Financieros</h3>
+            <p class="text-muted mb-1">**Empresa X** | Enero 2020 – Presente</p>
+            <ul>
+                <li>Responsable de modelar los presupuestos anuales, logrando un 95% de precisión en las previsiones.</li>
+                <li>Implementé scripts de Python para limpiar y procesar grandes volúmenes de datos transaccionales.</li>
+                <li>Colaboración directa con el equipo de IT para mejorar la infraestructura de reportes.</li>
+            </ul>
+
+            <h3>Técnico de Contabilidad</h3>
+            <p class="text-muted mb-1">**Firma de Auditoría Z** | Julio 2018 – Diciembre 2019</p>
+            <ul>
+                <li>Preparación de estados financieros trimestrales para 10 clientes del sector PYME.</li>
+                <li>Soporte en la documentación y presentación de auditorías internas.</li>
+            </ul>
+        </div>
+
+        <a id="habilidades"></a>
+        <div class="text-section">
+            <h2>Habilidades y Tech Stack</h2>
+            
+            <h4 class="mt-4">Lenguajes de Programación</h4>
+            <span class="badge text-bg-primary m-1">Python</span>
+            <span class="badge text-bg-primary m-1">SQL</span>
+            <span class="badge text-bg-primary m-1">R</span>
+
+            <h4 class="mt-4">Herramientas y Frameworks</h4>
+            <span class="badge text-bg-secondary m-1">Pandas / NumPy</span>
+            <span class="badge text-bg-secondary m-1">Jupyter Notebooks</span>
+            <span class="badge text-bg-secondary m-1">Git / GitHub</span>
+            <span class="badge text-bg-secondary m-1">Power BI / Tableau</span>
+        </div>
+
+        <a id="educacion"></a>
+        <div class="text-section">
+            <h2>Educación</h2>
+            
+            <h3 class="mt-4">Máster en Data Science y Análisis Financiero</h3>
+            <p class="text-muted mb-1">Universidad Tecnológica [Nombre]</p>
+            <p class="text-muted">2019 – 2020</p>
+
+            <h3 class="mt-4">Grado en Economía</h3>
+            <p class="text-muted mb-1">Universidad Central [Nombre]</p>
+            <p class="text-muted">2014 – 2018</p>
+        </div>
+
+        <a id="contacto"></a>
+        <div class="text-section">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de los siguientes canales:</p>
+            <ul>
+                <li>**Email:** <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a></li>
+                <li>**LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/tu-perfil)</li>
+                <li>**GitHub:** [github.com/tu-usuario](https://github.com/tu-usuario)</li>
+            </ul>
+        </div>
+
+        <footer class="mt-5 pt-3 border-top text-center text-muted">
+            <p>&copy; 2025 Tu Nombre | Desarrollado con Bootstrap y amor por la documentación.</p>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/b95984483a.js" crossorigin="anonymous"></script>
 </body>
 </html>
