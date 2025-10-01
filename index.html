@@ -3,192 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV | Tu Nombre</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <title>CV de [Tu Nombre]</title>
     <style>
-        :root {
-            /* Colores inspirados en Material for MkDocs */
-            --md-primary-color: #007bff; /* Azul primario para enlaces/botones */
-            --md-sidebar-color: #263238; /* Gris azulado oscuro para la barra lateral */
-            --md-text-color: #212529;
-            --md-background-color: #f8f9fa;
-        }
-
         body {
-            background-color: var(--md-background-color);
-            padding-top: 56px; /* Espacio para la barra de navegación superior */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
-
-        /* Estilo de la barra lateral de navegación */
-        .sidebar {
-            position: fixed; /* Hace que se mantenga en su sitio al hacer scroll */
-            top: 56px;
-            bottom: 0;
-            left: 0;
-            z-index: 1000;
-            padding: 15px;
-            width: 280px; /* Ancho fijo similar al ejemplo */
-            background-color: var(--md-sidebar-color);
-            overflow-y: auto; /* Permite hacer scroll solo en la barra lateral */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        /* Estilo para el contenido principal */
-        .main-content {
-            margin-left: 280px; /* Desplaza el contenido para dejar espacio a la barra lateral */
-            padding: 30px;
+        .header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
-
-        /* Estilo de los enlaces en la barra lateral */
-        .nav-link {
-            color: #ccc;
-            padding: 8px 15px;
-            border-radius: 4px;
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
-        .nav-link:hover, .nav-link.active {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
         }
-
-        /* Estilos del CV en el área de contenido */
-        h1, h2 {
-            color: var(--md-text-color);
-            font-weight: 700;
-            border-bottom: 2px solid #e9ecef;
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #2c3e50;
             padding-bottom: 10px;
-            margin-top: 25px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #2c3e50;
         }
-        .text-section {
-            line-height: 1.7;
-            font-size: 1.05rem;
+        .section p {
+            line-height: 1.6;
         }
-        /* Responsividad: Ocultar sidebar en móviles */
-        @media (max-width: 767.98px) {
-            .sidebar {
-                display: none;
-            }
-            .main-content {
-                margin-left: 0;
-                padding: 15px;
-            }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        .job, .education-item {
+            margin-bottom: 20px;
+        }
+        .job h3, .education-item h3 {
+            margin: 0 0 5px;
+            font-size: 1.4em;
+        }
+        .job .date, .education-item .date {
+            font-style: italic;
+            color: #777;
+        }
+        .job p, .education-item p {
+            margin: 5px 0;
+        }
+        .skills-list {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .skills-list li {
+            margin-bottom: 5px;
+        }
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--md-sidebar-color);">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">CV: Tu Nombre y Apellido</a>
-            </div>
-    </nav>
+    <div class="container">
+        <header class="header">
+            <h1>Juan Pérez</h1>
+            <p>Desarrollador Web Full Stack</p>
+        </header>
 
-    <div class="sidebar">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#inicio">🏠 Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#perfil">👤 Perfil Profesional</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#experiencia">💼 Experiencia Laboral</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#habilidades">⚙️ Habilidades y Tech Stack</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#educacion">🎓 Educación</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contacto">📧 Contacto</a>
-            </li>
-        </ul>
+        <div class="content">
+            <section class="section">
+                <h2>Perfil Profesional</h2>
+                <p>
+                    Profesional con más de 5 años de experiencia en el desarrollo de aplicaciones web, especializado en tecnologías de front-end y back-end. Apasionado por crear soluciones eficientes y escalables que aporten valor al usuario final.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Experiencia Laboral</h2>
+                <div class="job">
+                    <h3>Desarrollador Senior</h3>
+                    <p><strong>Empresa Tecnológica S.A.</strong></p>
+                    <p class="date">Enero 2022 - Presente</p>
+                    <ul>
+                        <li>Lideré el desarrollo del front-end para una nueva plataforma de e-commerce.</li>
+                        <li>Optimicé el rendimiento de la base de datos, mejorando los tiempos de respuesta en un 30%.</li>
+                        <li>Colaboré en un equipo ágil para entregar nuevas funcionalidades de manera continua.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3>Desarrollador Web Jr.</h3>
+                    <p><strong>Soluciones Digitales Ltda.</strong></p>
+                    <p class="date">Junio 2019 - Diciembre 2021</p>
+                    <ul>
+                        <li>Desarrollo y mantenimiento de sitios web para diversos clientes.</li>
+                        <li>Participación en la migración de sistemas legados a nuevas tecnologías.</li>
+                        <li>Implementación de diseños responsivos para mejorar la experiencia móvil.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Educación</h2>
+                <div class="education-item">
+                    <h3>Ingeniería de Sistemas</h3>
+                    <p><strong>Universidad Nacional</strong></p>
+                    <p class="date">2014 - 2019</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Habilidades Técnicas</h2>
+                <ul class="skills-list">
+                    <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                    <li>React, Angular, Vue.js</li>
+                    <li>Node.js, Express</li>
+                    <li>Python, Django</li>
+                    <li>Bases de datos: PostgreSQL, MongoDB</li>
+                    <li>Control de versiones: Git, GitHub</li>
+                    <li>Metodologías ágiles: Scrum, Kanban</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Contacto</h2>
+                <ul class="contact-info">
+                    <li><strong>Email:</strong> <a href="mailto:juan.perez@email.com">juan.perez@email.com</a></li>
+                    <li><strong>Teléfono:</strong> +57 300 123 4567</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tu-perfil" target="_blank">linkedin.com/in/tu-perfil</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/tu-usuario" target="_blank">github.com/tu-usuario</a></li>
+                </ul>
+            </section>
+        </div>
     </div>
 
-    <div class="main-content">
-        
-        <a id="inicio"></a>
-        <div class="text-section">
-            <h1>Bienvenido a mi CV en Línea</h1>
-            <p class="lead">Hola, soy **[Tu Nombre]**, un [Tu Título] apasionado por [Tu Área de Interés].</p>
-            <p>Utiliza la barra de navegación de la izquierda para explorar mi experiencia, educación y habilidades de manera estructurada.</p>
-        </div>
-
-        <a id="perfil"></a>
-        <div class="text-section">
-            <h2>Perfil Profesional</h2>
-            <p>
-                Escribe un resumen conciso y estratégico sobre quién eres y qué valor aportas.
-                <br><br>
-                **Ejemplo:** Profesional con 7 años de experiencia en el desarrollo de soluciones de análisis financiero y automatización de procesos. Experto en Python para data science y en la creación de dashboards interactivos con Power BI. Busco un rol que me permita liderar proyectos de transformación digital y optimización de recursos.
-            </p>
-        </div>
-
-        <a id="experiencia"></a>
-        <div class="text-section">
-            <h2>Experiencia Laboral</h2>
-
-            <h3>Analista Senior de Datos Financieros</h3>
-            <p class="text-muted mb-1">**Empresa X** | Enero 2020 – Presente</p>
-            <ul>
-                <li>Responsable de modelar los presupuestos anuales, logrando un 95% de precisión en las previsiones.</li>
-                <li>Implementé scripts de Python para limpiar y procesar grandes volúmenes de datos transaccionales.</li>
-                <li>Colaboración directa con el equipo de IT para mejorar la infraestructura de reportes.</li>
-            </ul>
-
-            <h3>Técnico de Contabilidad</h3>
-            <p class="text-muted mb-1">**Firma de Auditoría Z** | Julio 2018 – Diciembre 2019</p>
-            <ul>
-                <li>Preparación de estados financieros trimestrales para 10 clientes del sector PYME.</li>
-                <li>Soporte en la documentación y presentación de auditorías internas.</li>
-            </ul>
-        </div>
-
-        <a id="habilidades"></a>
-        <div class="text-section">
-            <h2>Habilidades y Tech Stack</h2>
-            
-            <h4 class="mt-4">Lenguajes de Programación</h4>
-            <span class="badge text-bg-primary m-1">Python</span>
-            <span class="badge text-bg-primary m-1">SQL</span>
-            <span class="badge text-bg-primary m-1">R</span>
-
-            <h4 class="mt-4">Herramientas y Frameworks</h4>
-            <span class="badge text-bg-secondary m-1">Pandas / NumPy</span>
-            <span class="badge text-bg-secondary m-1">Jupyter Notebooks</span>
-            <span class="badge text-bg-secondary m-1">Git / GitHub</span>
-            <span class="badge text-bg-secondary m-1">Power BI / Tableau</span>
-        </div>
-
-        <a id="educacion"></a>
-        <div class="text-section">
-            <h2>Educación</h2>
-            
-            <h3 class="mt-4">Máster en Data Science y Análisis Financiero</h3>
-            <p class="text-muted mb-1">Universidad Tecnológica [Nombre]</p>
-            <p class="text-muted">2019 – 2020</p>
-
-            <h3 class="mt-4">Grado en Economía</h3>
-            <p class="text-muted mb-1">Universidad Central [Nombre]</p>
-            <p class="text-muted">2014 – 2018</p>
-        </div>
-
-        <a id="contacto"></a>
-        <div class="text-section">
-            <h2>Contacto</h2>
-            <p>Puedes contactarme a través de los siguientes canales:</p>
-            <ul>
-                <li>**Email:** <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a></li>
-                <li>**LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/tu-perfil)</li>
-                <li>**GitHub:** [github.com/tu-usuario](https://github.com/tu-usuario)</li>
-            </ul>
-        </div>
-
-        <footer class="mt-5 pt-3 border-top text-center text-muted">
-            <p>&copy; 2025 Tu Nombre | Desarrollado con Bootstrap y amor por la documentación.</p>
-        </footer>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
